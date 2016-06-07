@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :ious
+  #
+  # devise_scope :user do
+  #   root to: "devise/sessions#new"
+  # end
+
+  resources :profile, only: [:index]
+
+  resources :ious, only: [:new, :create, :destroy]
+
+  root to: "profile#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,5 +65,5 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root to: "home#index"
+
 end

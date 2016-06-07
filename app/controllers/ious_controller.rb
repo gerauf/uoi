@@ -6,7 +6,6 @@ class IousController < ApplicationController
 
   def create
     @iou = Iou.create(iou_params)
-    byebug
     if @iou.save
       redirect_to '/ious/new'
     else
