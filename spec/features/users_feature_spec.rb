@@ -18,8 +18,10 @@ feature "User can sign in and out" do
   context "user can sign up" do
 
     it "should ask user for username when signing up" do
-      sign_up
-      expect(page).to have_content "Log out"
+      sign_up username: 'Lucy', email: 'lucy@lucy.com',
+              password: '12345678', confirmation: '12345678'
+      expect(page).to have_content "Lucy"
+      expect(page).to have_content "Welcome"
     end
   end
 
