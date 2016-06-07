@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
- *= require materalize
+ *= require normalize
+ *= require materialize
 
  */
