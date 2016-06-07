@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+
   #
   # devise_scope :user do
   #   root to: "devise/sessions#new"
   # end
 
-  resources :profile, only: [:index, :edit, :show, :update]
+  resources :profile, only: [:index]
+
+  resources :ious, only: [:new, :create, :destroy]
 
   root to: "profile#index"
 

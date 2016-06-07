@@ -30,7 +30,7 @@ I want to spam them
 
 As a UF
 So I don't forget to pay
-I want to recieve notification
+I want to receive notification
 
 As a UF
 So I can become a GP
@@ -42,5 +42,5 @@ I want to be protected from paying more than once
 
 As a UF
 When i become a GP
-I don't want to recieve spam with notifications
+I don't want to receive spam with notifications
 ```
