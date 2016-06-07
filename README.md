@@ -6,7 +6,7 @@ An app to help make getting money from your friends easier
 "Remembering amounts owed"
 
 ### USER STORIES:
-GP = Generous Person / UF = Useless Friend
+GP = Generous Person / UF = Useless Friend / UOI = You Owe I
 ```
 As a GP
 So I can manage my UOI
@@ -38,9 +38,9 @@ I want payments to be easy
 
 As a UF
 So I don't pay twice (or more)
-I want to be protected from this
+I want to be protected from paying more than once
 
 As a UF
 When i become a GP
-I don't want to receive spam
+I don't want to recieve spam with notifications
 ```
