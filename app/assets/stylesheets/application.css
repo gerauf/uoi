@@ -16,3 +16,8 @@
  *= require materialize
 
  */
+
+#jumbotron {
+  position:relative;
+  top:100px;
+}
