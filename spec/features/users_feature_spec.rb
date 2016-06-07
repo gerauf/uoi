@@ -19,9 +19,7 @@ feature "User can sign in and out" do
 
     it "should ask user for username when signing up" do
       sign_up
-      
-
-
+      expect(page).to have_content "Log out"
     end
   end
 
