@@ -14,11 +14,24 @@
     <nav class="teal lighten-2">
       <div class="nav-wrapper teal lighten-2">
         <a href="#!" class="brand-logo center teal lighten-2">UOI</a>
-        <ul class="right">
-          <li><a href="#">All</a></li>
-          <li><a href="#">Unpaid</a></li>
-          <li><a href="#">Paid</a></li>
-        </ul>
+        <% if current_user %>
+          <span>
+            <%= current_user.username %>
+          </span>
+
+          <ul class="right">
+            <li>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="right">
+            <li>
+              <%= link_to "Log in", new_user_session_path %>
+              <%= link_to "Sign up", new_user_registration_path %>
+            </li>
+          </ul>
+        <% end %>
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>
