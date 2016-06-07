@@ -54,5 +54,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-  root to: "home#index"
+  devise_scope :user do
+    root to: "devise/sessions#new"
+  end
 end
