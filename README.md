@@ -1,13 +1,13 @@
 # uoi
 An app to help make getting money from your friends easier
 
-PROBLEM:
+### PROBLEM:
 "Social awkwardness of asking for money owed"
 "Remembering amounts owed"
 
-USER STORIES: 
+### USER STORIES:
 GP = Generous Person / UF = Useless Friend
-
+```
 As a GP
 So I can manage my UOI
 I want to sign up to UOI
@@ -43,3 +43,4 @@ I want to be protected from this
 As a UF
 When i become a GP
 I don't want to receive spam
+```
