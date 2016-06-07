@@ -20,5 +20,9 @@ feature "User can sign in and out" do
       expect(page).to have_content "Lucy"
       expect(page).to have_content "Welcome"
     end
+
+    scenario "changes user count in database" do
+      expect{sign_up}.to change(User, :count).by 1
+    end
   end
 end
