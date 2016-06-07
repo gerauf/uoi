@@ -1,5 +1,7 @@
 class IousController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     @iou = Iou.new
   end
@@ -16,7 +18,8 @@ class IousController < ApplicationController
   end
 
   def iou_params
-    params.require(:iou).permit(:title, :amount, :name, :contact)
+    iou_user = {user: current_user}
+    params.require(:iou).permit(:title,:amount,:name,:contact).merge(iou_user)
   end
 
 end
