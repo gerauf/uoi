@@ -8,7 +8,11 @@
         <%= iou.title %>
         <%= iou.name %>
         <%= iou.amount %>
-        <%= link_to "Accept", iou_path(iou), method: :patch %>
+        <% if iou.status == "created" %>
+          <%= link_to "Accept", iou_path(iou), method: :patch %>
+        <% elsif iou.status == "pending" %>
+          <%= link_to "Pay Now", iou_path(iou), method: :patch %>
+        <% end %>
         <%= iou.status %>
       </li>
     <% end %>

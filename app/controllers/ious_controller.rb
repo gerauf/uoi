@@ -20,8 +20,10 @@ class IousController < ApplicationController
     @iou = Iou.find(params[:id])
     if @iou.status == "created"
       @iou.status = "pending"
-      @iou.save
+    elsif @iou.status == "pending"
+      @iou.status = "paid"
     end
+    @iou.save
     redirect_to '/'
   end
 
