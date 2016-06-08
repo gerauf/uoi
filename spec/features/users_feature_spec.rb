@@ -21,4 +21,12 @@ feature "User can sign in and out" do
       expect(page).to have_content "Welcome"
     end
   end
+
+  context 'valiadtions' do
+    scenario 'cannot sign up without a username' do
+      sign_up username: '', email: 'lucy@lucy.com',
+              password: '12345678', confirmation: '12345678'
+      expect(page).not_to have_content 'sign out'
+    end
+  end
 end
