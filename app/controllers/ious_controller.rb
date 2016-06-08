@@ -14,7 +14,10 @@ class IousController < ApplicationController
       flash[:notice] = @iou.errors.full_messages
       render :new
     end
+  end
 
+  def update
+    redirect_to '/'
   end
 
   def iou_params
