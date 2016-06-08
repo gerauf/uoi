@@ -4,18 +4,18 @@
 <div class="container" id="pending-uois">
 
 <% if current_user %>
-    <% if @ious.any? %>
-    <ul>
-      <% @ious.each do |iou| %>
-       <li>
-        <%= iou.title %>
-        <%= iou.name %>
-        <%= iou.amount %>
-      </li>
-      <% end %>
-    </ul>
-    <% else %>
-      <p>NO IOUS!</p>
+  <% if @ious.any? %>
+  <ul>
+  <% @ious.each do |iou| %>
+    <li>
+      <%= iou.title %>
+      <%= iou.name %>
+      <%= iou.amount %>
+    </li>
+  <% end %>
+  </ul>
+  <% else %>
+    <p>NO IOUS!</p>
   <% end %>
 <% end %>
 
