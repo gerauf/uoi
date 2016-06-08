@@ -9,7 +9,7 @@ class IousController < ApplicationController
   def create
     @iou = Iou.create(iou_params)
     if @iou.save
-      redirect_to '/ious/new'
+      redirect_to '/'
     else
       flash[:notice] = @iou.errors.full_messages
       render :new

@@ -8,4 +8,14 @@ module ApplicationHelper
     fill_in :'Password confirmation', with: confirmation
     click_button 'Sign up'
   end
+
+  def create_iou title: 'Pizza party', amount: 20,  name: "Noah", contact: "07123456789"
+    visit new_iou_path
+    fill_in :Title, with: title
+    fill_in :Amount, with: amount
+    fill_in :Name, with: name
+    fill_in :Contact, with: contact
+    click_button 'Create Iou'
+  end
+
 end
