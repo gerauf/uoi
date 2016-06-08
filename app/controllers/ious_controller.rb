@@ -14,7 +14,17 @@ class IousController < ApplicationController
       flash[:notice] = @iou.errors.full_messages
       render :new
     end
+  end
 
+  def update
+    @iou = Iou.find(params[:id])
+    if @iou.status == "created"
+      @iou.status = "pending"
+    elsif @iou.status == "pending"
+      @iou.status = "paid"
+    end
+    @iou.save
+    redirect_to '/'
   end
 
   def iou_params

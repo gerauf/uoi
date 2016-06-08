@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :profile, only: [:index]
 
-  resources :ious, only: [:new, :create, :destroy]
+  resources :ious, only: [:new, :create, :destroy, :update, :edit]
 
   root to: "profile#index"
 
