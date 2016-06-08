@@ -17,6 +17,11 @@ class IousController < ApplicationController
   end
 
   def update
+    @iou = Iou.find(params[:id])
+    if @iou.status == "created"
+      @iou.status = "pending"
+      @iou.save
+    end
     redirect_to '/'
   end
 

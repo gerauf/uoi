@@ -28,8 +28,8 @@ feature 'uois' do
 
     scenario 'Ious can be accepted' do
       create_iou
+      click_link 'Accept'
       iou = Iou.first
-      visit iou_path(iou), method: :patch
       expect(iou.status).to eq 'pending'
     end
 
