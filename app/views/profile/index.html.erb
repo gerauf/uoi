@@ -1,2 +1,22 @@
 <br>
 <br>
+
+<div class="container" id="pending-uois">
+
+<% if current_user %>
+  <% if @ious.any? %>
+  <ul>
+    <% @ious.each do |iou| %>
+     <li>
+      <%= iou.title %>
+      <%= iou.name %>
+      <%= iou.amount %>
+    </li>
+    <% end %>
+  <% else %>
+    NO IOUS!!!
+  </ul>
+  <% end %>
+<% end %>
+
+</div>
