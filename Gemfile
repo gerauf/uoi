@@ -25,6 +25,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'devise'
 
 gem 'delayed_job_active_record'
+gem 'daemons'
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -54,4 +57,5 @@ group :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'database_cleaner'
+  gem 'timecop'
 end

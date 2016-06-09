@@ -1,8 +1,7 @@
-require 'Spam'
 
 class IousController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:edit, :update]
 
   def new
     @iou = Iou.new
@@ -25,9 +24,9 @@ class IousController < ApplicationController
 
   def update
     @iou = Iou.find(params[:id])
-    @iou.status = 'pending'
+    @iou.update_status
     @iou.save
-    Spam.send_and_reschedule(@iou, IouMailer,Time.new, 100)
+    @iou.send_and_reschedule(IouMailer)
     redirect_to '/'
   end
 

@@ -12,7 +12,7 @@ class IouMailer < ApplicationMailer
   end
 
   def self.send_spam(iou)
-    spam_email(iou).deliver_now
+    self.spam_email(iou).deliver_now
   end
 
 
