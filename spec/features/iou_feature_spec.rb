@@ -41,6 +41,11 @@ feature 'uois' do
       expect(iou.status).to eq 'paid'
     end
 
+    scenario 'Ious can be deleted' do
+      create_iou
+      expect{click_link "Delete"}.to change(Iou, :count).by -1
+    end
+
   end
 
   context 'when not signed in' do
