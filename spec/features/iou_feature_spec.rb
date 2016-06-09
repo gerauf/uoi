@@ -41,6 +41,11 @@ feature 'uois' do
       expect(iou.status).to eq 'paid'
     end
 
+    scenario 'Ious can be deleted' do
+      create_iou
+      expect(page).to have_link "Delete"
+    end
+
   end
 
   context 'when not signed in' do

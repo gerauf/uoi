@@ -4,17 +4,10 @@
   <% if @ious.any? %>
     <ul>
     <% @ious.each do |iou| %>
-    <% if iou.status == "created" %>
-    <% @card_colour = "red lighten-2" %>
-    <% elsif iou.status == "pending" %>
-    <% @card_colour = "purple lighten-2" %>
-    <% elsif iou.status == "paid" %>
-    <% @card_colour = "blue-grey lighten-4" %>
-    <% end %>
       <li>
         <div class="row">
           <div class="col s12 l12">
-            <div class="card <%= @card_colour %>">
+            <div class="card <%= iou.get_colour %>">
             <div class="card-content white-text">
               <span class="card-title"><%= iou.title %></span>
                 <p><%= iou.status %></p>
@@ -28,6 +21,7 @@
                   <% elsif iou.status == "paid" %>
                     <p> PAID </p>
                   <% end %>
+                  <%= link_to "Delete", iou_path(iou), method: :destroy %>
               </div>
             </div>
           </div>

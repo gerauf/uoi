@@ -5,5 +5,14 @@ class Iou < ActiveRecord::Base
 
   belongs_to :user
 
+  def get_colour
+    if self.status == "created"
+      @card_colour = "red lighten-2"
+    elsif self.status == "pending"
+      @card_colour = "purple lighten-2"
+    elsif self.status == "paid"
+      @card_colour = "blue-grey lighten-4"
+    end
+  end
 
 end
