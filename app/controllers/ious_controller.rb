@@ -23,19 +23,8 @@ class IousController < ApplicationController
 
   def update
     @iou = Iou.find(params[:id])
-    @iou.status = "pending"
-    @iou.save
+    Spam.send_and_reschedule(@iou, IouMailer,Time.new, 100)
     redirect_to '/'
-
-
-    # @iou = Iou.find(params[:id])
-    # if @iou.status == "created"
-    #   @iou.status = "pending"
-    # elsif @iou.status == "pending"
-    #   @iou.status = "paid"
-    # end
-    # @iou.save
-    # redirect_to '/'
   end
 
   def iou_params
