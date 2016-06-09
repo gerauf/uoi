@@ -1,3 +1,5 @@
+require 'Spam'
+
 class IousController < ApplicationController
 
   before_action :authenticate_user!
@@ -9,7 +11,7 @@ class IousController < ApplicationController
   def create
     @iou = Iou.create(iou_params)
     if @iou.save
-      IouMailer.initial_mail(@iou).deliver_now
+      IouMailer.initial_email(@iou).deliver_now
       redirect_to '/'
     else
       flash[:notice] = @iou.errors.full_messages
@@ -23,6 +25,8 @@ class IousController < ApplicationController
 
   def update
     @iou = Iou.find(params[:id])
+    @iou.status = 'pending'
+    @iou.save
     Spam.send_and_reschedule(@iou, IouMailer,Time.new, 100)
     redirect_to '/'
   end
