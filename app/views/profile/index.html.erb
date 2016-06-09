@@ -14,8 +14,7 @@
                       <p><%= iou.amount %></p>
                       <p><%= iou.created_at.strftime( "%H:%M on %a %d %B %Y") %></p>
                       <div class="card-action">
-                        <%= iou.status %>
-                        <%= link_to "Delete", iou_path(iou), method: :delete %>
+                        <%= link_to "Delete", iou_path(iou), method: :delete, class: "waves-effect relative btn blue-grey ligthen-3" %>
                       </div>
                     </div>
                   </div>
