@@ -23,29 +23,7 @@ feature 'uois' do
         expect{ create_iou amount: 0 }.not_to change(Iou, :count)
         expect(page).to have_content 'must be greater than 0'
       end
-
     end
-
-    scenario 'Ious can be accepted' do
-      create_iou
-      click_link 'Accept'
-      iou = Iou.first
-      expect(iou.status).to eq 'pending'
-    end
-
-    scenario 'Ious can be marked as paid' do
-      create_iou
-      click_link 'Accept'
-      click_link 'Pay Now'
-      iou = Iou.first
-      expect(iou.status).to eq 'paid'
-    end
-
-    scenario 'Ious can be deleted' do
-      create_iou
-      expect{click_link "Delete"}.to change(Iou, :count).by -1
-    end
-
   end
 
   context 'when not signed in' do

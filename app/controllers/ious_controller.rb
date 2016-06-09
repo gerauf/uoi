@@ -1,6 +1,7 @@
+
 class IousController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:edit, :update]
 
   def new
     @iou = Iou.new
@@ -9,6 +10,7 @@ class IousController < ApplicationController
   def create
     @iou = Iou.create(iou_params)
     if @iou.save
+      IouMailer.initial_email(@iou).deliver_now
       redirect_to '/'
     else
       flash[:notice] = @iou.errors.full_messages
@@ -16,14 +18,14 @@ class IousController < ApplicationController
     end
   end
 
+  def edit
+    @iou = Iou.find(params[:id])
+  end
+
   def update
     @iou = Iou.find(params[:id])
-    if @iou.status == "created"
-      @iou.status = "pending"
-    elsif @iou.status == "pending"
-      @iou.status = "paid"
-    end
-    @iou.save
+    @iou.update_status
+    @iou.send_and_reschedule
     redirect_to '/'
   end
 

@@ -9,7 +9,7 @@ module ApplicationHelper
     click_button 'Sign up'
   end
 
-  def create_iou title: 'Pizza party', amount: 20,  name: "Noah", contact: "07123456789"
+  def create_iou title: 'Pizza party', amount: 20,  name: "Noah", contact: "example@gmail.com"
     visit '/'
     click_link 'receipt'
     fill_in :Title, with: title
