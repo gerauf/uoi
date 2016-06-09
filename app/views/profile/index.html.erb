@@ -1,40 +1,41 @@
 <div class="container" id="pending-uois">
-
-<% if current_user %>
-  <% if @ious.any? %>
-    <ul>
-    <% @ious.each do |iou| %>
-      <li>
-        <div class="row">
-          <div class="col s12 l12">
-            <div class="card <%= iou.get_colour %>">
-            <div class="card-content white-text">
-              <span class="card-title"><%= iou.title %></span>
-                <p><%= iou.status %></p>
-                <p><%= iou.name %></p>
-                <p><%= iou.amount %></p>
-                <div class="card-action">
-                  <% if iou.status == "created" %>
-                    <%= link_to "Accept", iou_path(iou), method: :patch %>
-                  <% elsif iou.status == "pending" %>
-                    <%= link_to "Pay Now", iou_path(iou), method: :patch %>
-                  <% elsif iou.status == "paid" %>
-                    <p> PAID </p>
-                  <% end %>
-                  <%= link_to "Delete", iou_path(iou), method: :destroy %>
+  <div class="list-panel">
+    <% if current_user %>
+      <% if @ious.any? %>
+        <ul>
+          <% @ious.each do |iou| %>
+            <li>
+              <div class="row">
+                <div class="col s12 l12">
+                  <div class="card <%= iou.get_colour %>">
+                  <div class="card-content white-text">
+                    <span class="card-title"><%= iou.title %></span>
+                      <p><%= iou.status %></p>
+                      <p><%= iou.name %></p>
+                      <p><%= iou.amount %></p>
+                      <div class="card-action">
+                        <% if iou.status == "created" %>
+                          Awaiting confirmation
+                          <%= link_to "Accept", iou_path(iou), method: :patch %>
+                        <% elsif iou.status == "pending" %>
+                          Awaiting payment
+                          <%= link_to "Pay Now", iou_path(iou), method: :patch %>
+                        <% elsif iou.status == "paid" %>
+                          <p><b>PAID</b></p>
+                        <% end %>
+                        <%= link_to "Delete", iou_path(iou), method: :delete %>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </li>
-    <% end %>
-    </ul>
-  <% else %>
-    <p>NO IOUS!</p>
-  <% end %>
-<% end %>
-
-<%= render "uoi_button" %>
-
+              </div>
+            </li>
+          <% end %>
+          </ul>
+        <% else %>
+          <p>NO IOUS!</p>
+        <% end %>
+      <% end %>
+    </div>
+  <%= render "uoi_button" %>
 </div>

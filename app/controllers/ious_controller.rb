@@ -27,6 +27,15 @@ class IousController < ApplicationController
     redirect_to '/'
   end
 
+  def destroy
+    @iou = Iou.find(params[:id])
+    @iou.destroy
+    flash[:notice] = 'Iou deleted'
+    redirect_to '/'
+  end
+
+private
+
   def iou_params
     iou_user = {user: current_user}
     params.require(:iou).permit(:title,:amount,:name,:contact).merge(iou_user)

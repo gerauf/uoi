@@ -43,7 +43,7 @@ feature 'uois' do
 
     scenario 'Ious can be deleted' do
       create_iou
-      expect(page).to have_link "Delete"
+      expect{click_link "Delete"}.to change(Iou, :count).by -1
     end
 
   end

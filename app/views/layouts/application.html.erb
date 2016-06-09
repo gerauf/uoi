@@ -13,10 +13,10 @@
   <div class="navbar-fixed blue-grey ligthen-3">
     <nav class="blue-grey ligthen-3">
       <div class="nav-wrapper blue-grey ligthen-3">
-        <a href="#!" class="brand-logo center blue-grey ligthen-3">UOI</a>
+        <a href="/" class="brand-logo center blue-grey ligthen-3">UOI</a>
         <% if current_user %>
-          <span>
-            <%= current_user.username %>
+          <span id="username">
+            Signed in as : <%= current_user.username %>
           </span>
 
           <ul class="right">
@@ -32,13 +32,21 @@
             </li>
           </ul>
         <% end %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
       </div>
     </nav>
   </div>
 
-  <div class="container" id="jumbotron">
+  <div class="container" id="site-body">
+    <% if notice || alert %>
+      <div class="row">
+        <div class="col s5 m5 l5">
+          <div class="card-panel small" id="flash">
+            <p class="notice"><%= notice %></p>
+            <p class="alert"><%= alert %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
 
     <%= yield %>
 

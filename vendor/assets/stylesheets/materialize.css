@@ -4630,7 +4630,7 @@ small {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-floating) {
-  color: #ffab40;
+  color: white;
   margin-right: 20px;
   transition: color .3s ease;
   text-transform: uppercase;
