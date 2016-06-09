@@ -10,7 +10,8 @@ module ApplicationHelper
   end
 
   def create_iou title: 'Pizza party', amount: 20,  name: "Noah", contact: "youidiot@gmail.com"
-    visit new_iou_path
+    visit '/'
+    click_link 'receipt'
     fill_in :Title, with: title
     fill_in :Amount, with: amount
     fill_in :Name, with: name
