@@ -25,8 +25,7 @@ class IousController < ApplicationController
   def update
     @iou = Iou.find(params[:id])
     @iou.update_status
-    @iou.save
-    @iou.send_and_reschedule(IouMailer)
+    @iou.send_and_reschedule
     redirect_to '/'
   end
 
