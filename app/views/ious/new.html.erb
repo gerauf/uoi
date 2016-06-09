@@ -1,11 +1,16 @@
-<%= form_for @iou do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :amount %>
-  <%= f.text_field :amount %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :contact %>
-  <%= f.email_field :contact %>
-  <%= f.submit %>
-<% end %>
+
+<div class="container" id="form-box">
+  <div class="col s12 l12">
+    <%= form_for @iou do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <%= f.label :amount %>
+      <%= f.text_field :amount %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <%= f.label :contact %>
+      <%= f.email_field :contact %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
