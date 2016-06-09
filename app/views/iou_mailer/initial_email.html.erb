@@ -2,9 +2,14 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-    <title></title>
+    <title> PAY ME NOW! </title>
   </head>
   <body>
+    <p>You spent <%= @iou.amount %> of my MONEY! </p>
+    <p>If you had a good time at <%= @iou.title %> YOU SHOULD PAY ME NOW!</p>
+    <p> Follow the link to setup payment notifications: </p>
     <%= link_to "Accept PMNB", edit_iou_url(@iou)%>
+    <p> Yours Sincerely, </p>
+    <p> <%= @user.username %> </p>
   </body>
 </html>
