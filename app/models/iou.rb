@@ -15,4 +15,8 @@ class Iou < ActiveRecord::Base
     end
   end
 
+  def get_order
+    
+  end
+
 end

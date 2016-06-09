@@ -13,12 +13,13 @@
                       <p><%= iou.status %></p>
                       <p><%= iou.name %></p>
                       <p><%= iou.amount %></p>
+                      <p><%= iou.created_at.strftime( "%H:%M on %a %d %B %Y") %></p>
                       <div class="card-action">
                         <% if iou.status == "created" %>
-                          Awaiting confirmation
+                          <p>Awaiting confirmation</p>
                           <%= link_to "Accept", iou_path(iou), method: :patch %>
                         <% elsif iou.status == "pending" %>
-                          Awaiting payment
+                          <p>Awaiting payment</p>
                           <%= link_to "Pay Now", iou_path(iou), method: :patch %>
                         <% elsif iou.status == "paid" %>
                           <p><b>PAID</b></p>
@@ -31,7 +32,7 @@
               </div>
             </li>
           <% end %>
-          </ul>
+        </ul>
         <% else %>
           <p>NO IOUS!</p>
         <% end %>
