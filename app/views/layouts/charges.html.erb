@@ -1,5 +1,57 @@
+<!DOCTYPE html>
 <html>
-  <body>
+<head>
+  <title>Uoi</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+  <div class="navbar-fixed blue-grey ligthen-3">
+    <nav class="blue-grey ligthen-3">
+      <div class="nav-wrapper blue-grey ligthen-3">
+        <a href="/" class="brand-logo center blue-grey ligthen-3" style="height:55px;margin-top:5px"><img src="/logo_small.png" style="height:55px;" /></a>
+
+        <% if current_user %>
+          <span id="username">
+            Signed in as : <b><%= current_user.username %></b>
+          </span>
+
+          <ul class="right">
+            <li>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        <% else %>
+          <ul class="right">
+            <li>
+              <%= link_to "Log in", new_user_session_path %>
+              <%= link_to "Sign up", new_user_registration_path %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container" id="site-body">
+    <% if notice || alert %>
+      <div class="row ">
+        <div class="col s6 offset-s3 m6 offset-m3">
+          <div class="card-panel small" id="flash">
+            <p class="notice center-align"><%= notice %></p>
+            <p class="alert center-align"><%= alert %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
     <%= yield %>
-  </body>
+
+  </div>
+
+
+</body>
 </html>

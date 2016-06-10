@@ -19,7 +19,7 @@ class Iou < ActiveRecord::Base
   def send_and_reschedule(mailer = IouMailer)
     unless self.status == 'paid'
       mailer.send_spam(self)
-      self.delay(run_at: Time.new + 100).send_and_reschedule(mailer)
+      self.delay(run_at: Time.new + 10).send_and_reschedule(mailer)
     end
   end
 
