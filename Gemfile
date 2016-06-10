@@ -42,6 +42,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'byebug'
   gem 'pry'
+  gem 'stripe'
 
 end
 
