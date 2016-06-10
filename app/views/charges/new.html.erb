@@ -13,7 +13,8 @@
 
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
+          data-description="Pay IOU"
+          data-currency="gbp"
           data-amount="<%= @iou.amount*100.to_i %>"
           data-locale="auto"></script>
 <% end %>

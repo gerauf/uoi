@@ -21,9 +21,11 @@ class ChargesController < ApplicationController
       :currency    => 'gbp'
     )
 
+    @iou.update_status
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to new_iou_charge_path(@iou)
   end
+
 
 end
