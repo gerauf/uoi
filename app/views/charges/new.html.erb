@@ -1,0 +1,22 @@
+
+<%= form_tag iou_charges_path(@iou) do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: £<%= @iou.amount ||= 500 %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Pay IOU"
+          data-currency="gbp"
+          data-amount="<%= @iou.amount*100.to_i %>"
+          data-locale="auto"
+          data-email="<%= @iou.contact%>"></script>
+
+<% end %>

@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20160608183754) do
 
   create_table "ious", force: :cascade do |t|
     t.string   "title"
-    t.float    "amount"
+    t.decimal  "amount"
     t.string   "name"
     t.string   "contact"
     t.datetime "created_at",                     null: false
