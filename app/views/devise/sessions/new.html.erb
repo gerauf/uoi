@@ -1,8 +1,8 @@
-<h2>Log in</h2>
 
 <div class="container" id="form-box">
+  <h2>Log in</h2>
   <div class="col s12 l12">
-
+    <br>
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
         <%= f.label :email %><br />
@@ -22,11 +22,10 @@
       <% end -%>
 
       <div class="actions">
-        <%= f.submit "Log in" %>
+        <p><%= f.submit "Log in", class: "waves-effect relative btn blue-grey ligthen-3" %></p>
       </div>
+        <p><%= render "devise/shared/links" %></p>
     <% end %>
 
   </div>
 </div>
-
-<%= render "devise/shared/links" %>

@@ -16,7 +16,7 @@ feature 'profile' do
   context 'no ious' do
     scenario 'show message when no ious' do
       within 'div#pending-uois' do
-        expect(page).to have_content('NO IOUS!')
+        expect(page).to have_content('No one owes you money!')
       end
     end
   end
