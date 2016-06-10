@@ -41,7 +41,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
-  ActionMailer::Base.delivery_method = :sendmail
+  ActionMailer::Base.delivery_method = :stmp
   # SMTP settings for gmail
   ActionMailer::Base.smtp_settings = {
     :address              => "smtp.gmail.com",
@@ -49,8 +49,9 @@ Rails.application.configure do
     :domain               => "gmail.com",
     :user_name            => ENV['username'],
     :password             => ENV['password'],
-    :authentication       => 'plain',
+    :authentication       => :login,
     :enable_starttls_auto => true
   }
 
 end
+
