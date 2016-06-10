@@ -8,7 +8,7 @@
     </div>
     <% end %>
     <label class="amount">
-      <h5>Amount: £<%= @iou.amount ||= 500 %></h5>
+      <h5>Amount: <%= "£%.2f" % @iou.amount %></h5>
     </label>
   </article>
 
