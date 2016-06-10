@@ -5,12 +5,12 @@
       <%= f.label :title %>
       <%= f.text_field :title %>
       <%= f.label :amount %>
-      <%= f.text_field :amount %>
+      <%= f.text_field :amount, placeholder: "£" %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       <%= f.label :contact %>
       <%= f.email_field :contact %>
-      <%= f.submit %>
+      <p><%= f.submit class: "waves-effect relative btn blue-grey ligthen-3" %></p>
     <% end %>
   </div>
 </div>

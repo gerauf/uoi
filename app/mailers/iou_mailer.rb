@@ -4,13 +4,13 @@ class IouMailer < ApplicationMailer
   def initial_email(iou)
     @iou = iou
     @user = User.find(@iou.user_id)
-    mail( to: @iou.contact, subject: 'pay me soon please')
+    mail( to: @iou.contact, subject: 'Hi! Can you PLEASE PAY $OON')
   end
 
   def spam_email(iou)
     @iou = iou
     @user = User.find(@iou.user_id)
-    mail( to: @iou.contact, subject: 'pay me now!')
+    mail( to: @iou.contact, subject: 'PAY ME NOW!')
   end
 
   def self.send_spam(iou)

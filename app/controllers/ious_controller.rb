@@ -13,7 +13,7 @@ class IousController < ApplicationController
       IouMailer.initial_email(@iou).deliver_now
       redirect_to '/'
     else
-      flash[:notice] = @iou.errors.full_messages
+      flash[:notice] = @iou.errors.full_messages.join(', ')
       render :new
     end
   end
