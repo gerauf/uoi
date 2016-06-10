@@ -17,8 +17,8 @@
 
  */
 body {
- background-color: #eceff1;
- }
+  background-color: #eceff1;
+}
 
 #site-body {
   position:relative;
@@ -27,6 +27,16 @@ body {
 
 #flash {
   background-color: #cfd8dc;
+}
+
+.notice {
+  text-align: center;
+  font-size: 12pt;
+}
+
+.alert {
+  text-align: center;
+  font-size: 12pt;
 }
 
 #username{
@@ -38,7 +48,6 @@ body {
   background-color: white;
   box-shadow: 0px 0px 3px grey;
 }
-
 
 #form-box {
   padding: 40px 22px 22px 22px;

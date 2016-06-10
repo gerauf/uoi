@@ -6,7 +6,7 @@ feature "setting up an iou" do
       iou = Iou.first()
       invite_email = ActionMailer::Base.deliveries.last
       expect(invite_email.to).to eq ['example@gmail.com']
-      expect(invite_email.body).to have_content 'Accept PMNB'
+      expect(invite_email.body).to have_content 'The Link'
     end
   end
 

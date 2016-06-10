@@ -4,9 +4,11 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
     <title></title>
   </head>
-  <body>
-    <%= link_to "PAY ME NOW", new_iou_charge_url(@iou)%>
-    <p> YOURS SINCERELY!!!! </p>
-    <%= @user.username %>
+  <body style="font-family:verdana;">
+      <h3 style="color: #e53935">!!! WHERE's MY MONEY !!!</h3>
+      <p> Click here to: </p>
+      <p><b><%= link_to "PAY ME NOW", new_iou_charge_url(@iou)%></b></p>
+      <p> YOURS SINCERELY, </p>
+      <b><%= @user.username %></b>
   </body>
 </html>
