@@ -16,5 +16,7 @@
           data-description="Pay IOU"
           data-currency="gbp"
           data-amount="<%= @iou.amount*100.to_i %>"
-          data-locale="auto"></script>
+          data-locale="auto"
+          data-email="<%= @iou.contact%>"></script>
+
 <% end %>

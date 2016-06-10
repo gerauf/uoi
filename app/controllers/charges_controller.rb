@@ -7,7 +7,6 @@ class ChargesController < ApplicationController
   def create
     @iou = Iou.find(params[:iou_id])
     @amount = (@iou.amount*100).to_i
-    # @iou = Iou.find(params[:id])
 
     customer = Stripe::Customer.create(
       :email => params[:stripeEmail],
@@ -22,7 +21,9 @@ class ChargesController < ApplicationController
     )
 
     @iou.update_status
-  rescue Stripe::CardError => e
+
+    rescue Stripe::CardError => e
+
     flash[:error] = e.message
     redirect_to new_iou_charge_path(@iou)
   end
