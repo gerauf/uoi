@@ -19,16 +19,16 @@ rails s
 - Sign up and start creating IOUs
 
 **Sign up or log in**
-[signup](http://i.imgur.com/FGt5pC4.png)
+![signup](http://i.imgur.com/FGt5pC4.png)
 
 **See who owes you money**
-[check](http://i.imgur.com/d3ufNsc.png)
+![check](http://i.imgur.com/d3ufNsc.png)
 
 **Create ious**
-[create](http://i.imgur.com/ltsvacB.png)
+![create](http://i.imgur.com/ltsvacB.png)
 
 **Manage ious**
-[manage](http://i.imgur.com/ljybkdB.png)
+![manage](http://i.imgur.com/ljybkdB.png)
 
 
 
